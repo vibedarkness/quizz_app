@@ -1,0 +1,60 @@
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WHOIS QUIZ</title>
+<!-- FontAwesome-cdn include -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Bootstrap-css include -->
+<link rel="stylesheet" href= "{% static "assets/css/bootstrap.min.css" %}">
+<!-- Animate-css include -->
+<link rel="stylesheet" href="{% static "assets/css/animate.min.css" %}">
+<!-- Main-StyleSheet include -->
+<link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+</head>
+<body>
+<div class="wrapper position-relative">
+<div class="top_content_area pt-2">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="logo_area ms-5">
+               <a href="index.html">
+                  <img src="{% static "assets/images/logo/logo.png" %}" alt="image_not_found">
+               </a>
+            </div>
+         </div>
+         <div class="col-md-6 d-none d-md-block">
+            <div class="count_box overflow-hidden rounded-pill d-flex float-end me-5">
+               <div class="count_clock ps-2">
+                  <img src="{% static "assets/images/counter/clock.png" %}" alt="image_not_found">
+               </div>
+               <div class="count_title px-1">
+                  <h4 class="pe-5">Quiz</h4>
+                  <span>Time start</span>
+               </div>
+               <div class="count_number rounded-pill bg-white overflow-hidden me-2 text-center countdown_timer" data-countdown="2022/10/24">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% block main %}
+{% endblock main  %}
+
+
+<script src="{% static "assets/js/jquery-3.6.0.min.js" %}"></script>
+<!-- Countdown-js include -->
+<script src="{% static "assets/js/countdown.js" %}"></script>
+<!-- Bootstrap-js include -->
+<script src="{% static "assets/js/bootstrap.min.js" %}"></script>
+<!-- jQuery-validate-js include -->
+<script src="{% static "assets/js/jquery.validate.min.js" %}"></script>
+<!-- Custom-js include -->
+<script src="{% static "assets/js/script.js" %}"></script>
+</body>
+</html>

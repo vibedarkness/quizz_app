@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Main',
+    'quizes',
+    'resultats',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'quizz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,13 +74,42 @@ TEMPLATES = [
 WSGI_APPLICATION = 'quizz.wsgi.application'
 
 
+
+JAZZMIN_SETTINGS = {
+    
+    "site_title": "WhoisQuiz",
+
+    "site_header": "WhoisQuiz",
+
+    # "language_chooser": True,
+
+    "site_brand": "WhoisQuiz",
+
+    "related_modal_active": True,
+
+    "copyright": "Thiapathioly Global Service",
+
+    "welcome_sign": "Bienvenue dans WhoisQuizz",
+}
+JAZZMIN_SETTINGS["show_ui_builder"] = True
+
+# JAZZMIN_UI_TWEAKS = {
+#     "theme": "flatly",
+#     "dark_mode_theme": "darkly",
+# }
+
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'quizz',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -118,7 +150,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS=[
+    BASE_DIR / 'static',
+    BASE_DIR / 'quizes' /'static',
+
+]
