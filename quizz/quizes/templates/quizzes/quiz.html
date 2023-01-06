@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{obj.name}}
+{% endblock title %}
+
+{% block main %}
+<div class="container">
+    <form class="multisteps_form position-relative overflow-hidden mt-5" id="wizard" method="POST" action="/resultat">
+        {% csrf_token %}
+<div class="form_header_content text-center pt-4">
+    <h2>{{obj.name}}</h2>
+    <span>Fill out this Tirnva quiz for fun!</span>
+ </div>
+</form>
+</div>
+{% endblock main %} 
+
+
+

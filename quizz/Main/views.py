@@ -3,11 +3,11 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def index(request):
+# def index(request):
 
-    return render(request, '../templates/index.html')
+#     return render(request, '../templates/index.html')
 
 
-def resultat(request):
+# def resultat(request):
 
-    return render(request, '../templates/resultat.html')
+#     return render(request, '../templates/resultat.html')
