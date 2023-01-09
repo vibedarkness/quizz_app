@@ -1,4 +1,5 @@
 from django.db import models
+import random
 
 # Create your models here.
 
@@ -12,7 +13,7 @@ class Quiz(models.Model):
     name = models.CharField(max_length = 120)
     topic = models.CharField(max_length = 120)
     nombre_de_question=models.IntegerField()
-    temps=models.IntegerField(help_text="temps du quiz")
+    temps=models.IntegerField(help_text="temps du quiz en minutes")
     score_passe=models.IntegerField(help_text="score demander en %")
     niveau = models.CharField(max_length = 15, choices=NIVEAU)
     
@@ -20,7 +21,9 @@ class Quiz(models.Model):
         return f"{self.name}-{self.topic}"
 
     def get_questions(self):
-        return self.question_set.all()[:self.nombre_de_question]
+        questions=list(self.question_set.all())
+        random.shuffle(questions)
+        return questions[:self.nombre_de_question]
     
     
     

@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'quizs/quiz.js' %}" defer></script>
+{% endblock scripts %}
 
 {% block title %}
 {{obj.name}}
@@ -6,11 +11,14 @@
 
 {% block main %}
 <div class="container">
-    <form class="multisteps_form position-relative overflow-hidden mt-5" id="wizard" method="POST" action="/resultat">
+    <form id="quiz-form" class="multisteps_form position-relative overflow-hidden mt-5" id="wizard" method="POST" action="/resultat">
         {% csrf_token %}
-<div class="form_header_content text-center pt-4">
-    <h2>{{obj.name}}</h2>
-    <span>Fill out this Tirnva quiz for fun!</span>
+<div id="quiz-box" class="form_header_content text-center pt-4">
+    {% comment %} <h2>{{obj.name}}</h2>
+    <span>Fill out this Tirnva quiz for fun!</span> {% endcomment %}
+ </div>
+ <div class="form_btn py-5 text-center">
+ <button type="submit" class="f_btn active text-uppercase rounded-pill text-white" id="nextBtn"> Soumettre <i class="fas fa-arrow-right"></i></button>
  </div>
 </form>
 </div>

@@ -22,21 +22,21 @@ Acceuil
 
   
   <!-- Modal -->
-  <div class="modal fade" id="quizStartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
+  <div class="modal fade" id="quizStartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" role="document" >
+      <div class="modal-content" style="background-image:linear-gradient(to right, rgba(33, 147, 176, 0.7), rgba(18, 124, 148, 0.7));">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Debuter</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="modal-body-confirm">
+        <div class="modal-body" id="modal-body-confirm" >
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-          <button type="button" id="start-button" class="btn btn-primary">Oui</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+          <button id="start-button" class="btn btn-success">Oui</button>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@ Acceuil
 
   {% for obj in object_list %}
   <button 
-  class="btn btn-link modal-button" 
+  class="btn btn-info modal-button" 
   style="margin-left: 550px;"   
   data-id="{{obj.id}}"
   data-quiz="{{obj.name}}"
@@ -55,7 +55,8 @@ Acceuil
   data-toggle="modal" 
   data-target="#quizStartModal">
     Demarer le Test {{obj.name}}
-  </button>
+  </button><br>
+  <br>
   {% endfor %}
 
 
