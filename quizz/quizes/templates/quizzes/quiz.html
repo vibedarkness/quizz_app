@@ -11,16 +11,29 @@
 
 {% block main %}
 <div class="container">
-    <form id="quiz-form" class="multisteps_form position-relative overflow-hidden mt-5" id="wizard" method="POST" action="/resultat">
+    <div id="score-box">
+    </div>
+    <div id="resultat-box">
+    </div>
+
+    <div class="col-md-3 d-none d-md-block">
+        <div class="count_box overflow-hidden rounded-pill d-flex float-end me-5">
+           <div class="count_title px-1">
+              <h4 class="pe-5">Score demander: {{obj.score_passe}}</h4>
+           </div>
+        </div>
+     </div>
+    <form id="quiz-form" class="multisteps_form position-relative overflow-hidden mt-5"  method="POST" action="/resultat">
         {% csrf_token %}
 <div id="quiz-box" class="form_header_content text-center pt-4">
     {% comment %} <h2>{{obj.name}}</h2>
     <span>Fill out this Tirnva quiz for fun!</span> {% endcomment %}
  </div>
  <div class="form_btn py-5 text-center">
- <button type="submit" class="f_btn active text-uppercase rounded-pill text-white" id="nextBtn"> Soumettre <i class="fas fa-arrow-right"></i></button>
+ <button type="submit" class="f_btn active text-uppercase rounded-pill text-white"> Soumettre <i class="fas fa-arrow-right"></i></button>
  </div>
 </form>
+
 </div>
 {% endblock main %} 
 

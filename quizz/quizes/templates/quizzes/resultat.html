@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} <script src="{% static 'quizs/quiz.js' %}" defer></script> {% endcomment %}
+{% block main %}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="row text-center">
+            <div class="check_mark_img" style="">
+                <img style="height:150px; width:150px;" src= "{% static "assets/images/completed.png" %}" alt="image_not_found">
+            </div>
+            <div class="sub_title">
+                <span>Votre Soummission a été bien enregistrer</span>
+            </div>
+            <div class="title pt-1">
+                <h3>Thankyou For Give Answer</h3>
+            </div>
+            <br>
+            <br>
+            <div id="score-box">
+            </div>
+            <div id="resultat-box">
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock main %}
